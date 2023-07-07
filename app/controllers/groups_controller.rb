@@ -20,7 +20,6 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(author: current_user, name: group_params[:name], icon: group_params[:icon])
 
-
     if @group.save
       flash[:notice] = 'Category created successfully'
       redirect_to groups_path
