@@ -18,12 +18,15 @@ class GroupsController < ApplicationController
   # end
 
   def create
-    @group = Group.new(group_params)
+    @group = Group.new(author: current_user, name: group_params[:name], icon: group_params[:icon])
+
 
     if @group.save
       flash[:notice] = 'Category created successfully'
       redirect_to groups_path
     else
+      puts @group.errors
+      puts @group.errors.full_messages
       render :new, status: :unprocessable_entity
     end
   end
