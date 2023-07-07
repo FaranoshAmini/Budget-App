@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class groupTest < ActiveSupport::TestCase
+class GroupTest < ActiveSupport::TestCase
   test 'should not be valid without a name' do
     group = group.new(author: User.first, name: '', icon: 'shopping')
     assert_not group.valid?

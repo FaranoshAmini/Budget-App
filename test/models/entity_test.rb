@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class entityTest < ActiveSupport::TestCase
+class EntityTest < ActiveSupport::TestCase
   test 'entity should not be valid without a name' do
     entity = entity.new(author: User.first, name: '', amount: 100)
 

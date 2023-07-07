@@ -7,7 +7,7 @@ class Group < ApplicationRecord
 
   validates :name, presence: true
   validates :icon, presence: true
-  
+
   def total_amount
     total = 0
     entities.each do |t|
