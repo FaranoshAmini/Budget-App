@@ -1,0 +1,26 @@
+<header class="page-header">
+<%# <span><%= button_to image_tag('hamburger4.png'), method: :delete, class: "del-group-btn btn-icon"%>
+<%# <i class="fa fa-bars" aria-hidden="true"></i> %>
+<h1>Categories</h1>
+<span><%= button_to image_tag('search.jpg'), method: :delete, class: "del-group-btn btn-icon"%></span>
+</header>
+<section>
+ <div class="cards-container">
+   <% @groups.each do |group| %>
+   <a class="card-link-wrapper" href="<%= group_entities_path(group) %>">
+   <div class="card">
+   <div class="img-plchldr column"><img src="<%= group.icon %>"></div>
+   <div class="column">
+   <span><%= group.name %></span>
+   <span class="date-stamp"><%= group.date %></span>
+   </div>
+   <div class="column last-col">
+   <span class="sec-text"><%= group.total_amount %></span>
+   <%# <span><%= button_to image_tag(), group_path(group.id), method: :delete, class: "del-group-btn btn-icon"%>
+   </div>
+ </div>
+ </a>
+ <% end %>
+ <%= link_to "ADD CATEGORY", new_group_path, class: "btn-add" %>
+ </div>
+</section>
