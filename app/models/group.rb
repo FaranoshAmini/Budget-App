@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  belongs_to :author, class_name: "User", foreign_key: :author_id
+  belongs_to :author, class_name: 'User', foreign_key: :author_id
   # has_many :group_entities, foreign_key: :group_id
   has_many :entities, through: :group_entities, foreign_key: :group_id
   validates :name, presence: true
