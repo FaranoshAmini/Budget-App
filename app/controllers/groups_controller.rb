@@ -9,17 +9,10 @@ class GroupsController < ApplicationController
     @group = Group.new
   end
 
-  # def create
-  #   @new_group = Group.new(group_params)
-  #   return unless @new_group.save
-
-  #   flash[:success] = 'Category created successfully.'
-  #   redirect_to groups_path
-  # end
 
   def create
-    @group = Group.new(author: current_user, name: group_params[:name], icon: group_params[:icon])
-
+    @group = current_user.groups.build(group_params)
+  
     if @group.save
       flash[:notice] = 'Category created successfully'
       redirect_to groups_path
@@ -41,6 +34,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon, :author_id)
+    params.require(:group).permit(:name, :icon)
   end
 end
