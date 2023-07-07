@@ -1,0 +1,20 @@
+<header class="page-header">
+<h1>New Transaction</h1>
+</header>
+<section class="form-wrapper" id="new-category-form">
+<%= form_for @new_entity, url: group_entities_path, html: { method: :post } do |f| %>
+ <div class="field">
+ <%= f.text_field :name, placeholder: "Name" %>
+ </div>
+ <div class="field">
+ <%= f.number_field :amount, placeholder: "Amount" %>
+ </div>
+ <div class="field">
+  <%= f.collection_select :group_id, @user_groups, :id, :name %>
+ </div> 
+ <%= f.hidden_field :author_id, value: current_user.id %>
+ <div class="field" >
+<%= f.submit :ADD, class: 'btn-add'%>
+</div>
+<% end %>
+</section>
