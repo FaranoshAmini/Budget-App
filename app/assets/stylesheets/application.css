@@ -87,6 +87,7 @@ header#page-header,
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: auto;
   background-color: var(--main-color);
   color: white;
 }
@@ -238,6 +239,12 @@ input#price {
   width: 94%;
   padding: 15px;
   margin: 10px;
+}
+
+input#entity_name, input#entity_amount,select#entity_group_id {
+  width: 96%;
+  margin: 7px;
+  padding: 10px;
 }
 
 @media only screen and (min-width: 768px) {

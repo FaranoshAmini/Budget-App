@@ -2,7 +2,7 @@
 <h1>New Transaction</h1>
 </header>
 <section class="form-wrapper" id="new-category-form">
-<%= form_with @new_entity, url: group_entities_path, html: { method: :post } do |f| %>
+<%= form_with model: @new_entity, url: group_entities_path, html: { method: :post } do |f| %>
  <div class="field">
  <%= f.text_field :name, placeholder: "Name" %>
  </div>

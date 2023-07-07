@@ -8,7 +8,7 @@ class EntitiesController < ApplicationController
   def new
     @new_entity = Entity.new
     @group = Group.find(params[:group_id])
-    @user_groups = Group.where(user: current_user)
+    @user_groups = Group.where(author: current_user)
   end
 
   def create
