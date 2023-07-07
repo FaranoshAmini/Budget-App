@@ -1,15 +1,293 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* stylelint-disable no-descending-specificity */
+:root {
+    --main-color: #3778c2;
+    --sec-color: #5fb523;
+    --text-color: #434b54;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: #fff;
+    font-family: proxima-nova, sans-serif;
+    color: var(--text-color);
+  }
+  
+  .primary-text {
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  
+  .sec-text {
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  
+  .btn,
+  .btn-add {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    font-family: proxima-nova, sans-serif;
+    background-color: var(--sec-color);
+    padding: 30px;
+    width: 100%;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn-add {
+    bottom: 0;
+  }
+  
+  .header {
+    padding-top: 40vh;
+    font-size: 30px;
+    text-align: center;
+    font-family: proxima-nova, sans-serif;
+  }
+  
+  section#first-page nav .btn {
+    position: initial;
+    margin: auto;
+  }
+  
+  .blue-btn {
+    background-color: var(--main-color) !important;
+    bottom: 60px;
+  }
+  
+  .gray-btn {
+    background-color: inherit !important;
+    color: var(--text-color);
+    bottom: 0;
+  }
+  
+  .gray-btn a {
+    color: var(--text-color) !important;
+  }
+  
+  a {
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  header#page-header,
+  .page-header {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: var(--main-color);
+    color: white;
+  }
+  
+  header#page-header img {
+    width: 35px;
+  }
+  
+  .signin-header,
+  .signout-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #3778c2;
+    color: #fff;
+  }
+  
+  header#page-header h1 {
+    padding: 10px 0;
+    font-size: 24px;
+    white-space: nowrap;
+    color: #ffe;
+  }
+  
+  header.title h1 {
+    margin: 0 auto !important;
+    transform: none !important;
+  }
+  
+  .but-icon {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .categories-signout {
+    transform: translate(-10vw, 0);
+  }
+  
+  .but-icon img {
+    width: 25px !important;
+  }
+  
+  .cards-container {
+    position: relative;
+    min-height: calc(93vh - 50px);
+  }
+  
+  .transactions-container {
+    min-height: calc(93vh - 50px);
+    width: 100%;
+  }
+  
+  a.card-link-wrapper {
+    text-decoration: none;
+    color: var(--text-color);
+  }
+  
+  div.card {
+    max-height: 150px;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    gap: 4px;
+    box-shadow: 0 0 5px #a0a0a0;
+    background-color: #fff;
+  }
+  
+  div.card .column {
+    width: 50%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  div.card .img-plchldr {
+    width: 25%;
+    margin-top: 0;
+  }
+  
+  .img-plchldr img {
+    height: 100%;
+    width: 100%;
+  }
+  
+  div.card .last-col {
+    width: 25%;
+    text-align: end;
+  }
+  
+  div.card .date-stamp {
+    font-size: 0.8rem;
+  }
+  
+  div.top-card {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 5px #a0a0a0;
+    background-color: #fff;
+  }
+  
+  .form-wrapper a,
+  .form-wrapper input[type="checkbox"] {
+    margin-left: 10px;
+  }
+  
+  form {
+    margin: 10px 0;
+  }
+  
+  input#user_name,
+  input#user_email,
+  input#user_password {
+    width: 96%;
+    margin: 1%;
+    padding: 7px;
+    font-size: 18px;
+    color: black;
+  }
+  
+  .last-input {
+    border-bottom: 1px solid #a0a0a0;
+  }
+  
+  form input[type="checkbox"] {
+    margin: 20px 0;
+    width: auto;
+  }
+  
+  form select {
+    width: 100%;
+    padding: 15px;
+    margin-left: 10px;
+  }
+  
+  input.next {
+    background-color: #3778c2;
+  }
+  
+  input#group_name,
+  input#group_icon,
+  input#name,
+  input#price {
+    width: 94%;
+    padding: 15px;
+    margin: 10px;
+  }
+  
+  @media only screen and (min-width: 768px) {
+    section#first-page {
+      width: 60%;
+      max-width: 600px;
+      height: 100vh;
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      border: 1px solid #a0a0a0;
+      position: relative;
+      background-color: #f0f0f0;
+      box-shadow: 1px 10px 10px #a0a0a0;
+    }
+  
+    section#first-page nav {
+      position: absolute;
+      bottom: 0;
+    }
+  
+    .form-wrapper {
+      width: 60%;
+      height: 80vh;
+      max-width: 600px;
+      position: relative;
+      margin: 30px auto;
+      padding: 20px;
+      border: 1px solid #a0a0a0;
+      background-color: #f0f0f0;
+      box-shadow: 1px 10px 10px #a0a0a0;
+    }
+  
+    .form-wrapper .btn {
+      margin-left: -20px;
+    }
+  
+    .cards-container {
+      width: 60%;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 0 10px #a0a0a0;
+    }
+  
+    .transactions-container {
+      box-shadow: 0 10px 10px #a0a0a0;
+    }
+  
+    .categories-signout {
+      transform: translate(-14vw, 0);
+    }
+  }
+  
