@@ -10,8 +10,8 @@ gem 'rails', '~> 7.0.5'
 gem 'sprockets-rails'
 
 # Use postgresql as the database for Active Record
-gem 'pg', '~> 1.1'
 gem 'devise'
+gem 'pg', '~> 1.1'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -68,8 +68,8 @@ end
 
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'cancancan', '~> 1.9'
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers'
-  gem 'cancancan', '~> 1.9'
 end
