@@ -1,6 +1,13 @@
 class Entity < ApplicationRecord
-  belongs_to :author, class_name: 'User'
-  has_and_belongs_to_many :groups
-  validates :name, presence: true
-  validates :amount, presence: true, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
-end
+    has_many :group_entities, foreign_key: :entity_id
+    has_many :groups, through: :group_entities, foreign_key: :entity_id
+    validates :name, :author, :group, :amount, presence: true
+  
+    def date
+      date = ''
+      date += "#{created_at.day} "
+      date += "#{Date::ABBR_MONTHNAMES[created_at.month]} "
+      date += created_at.year.to_s
+      date
+    end
+  end
