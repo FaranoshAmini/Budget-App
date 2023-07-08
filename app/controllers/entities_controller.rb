@@ -41,6 +41,6 @@ class EntitiesController < ApplicationController
   private
 
   def entity_params
-    params.require(:entity).permit(:name, :amount, :author_id)
+    params.require(:entity).permit(:name, :amount, :author_id, :group_id)
   end
 end

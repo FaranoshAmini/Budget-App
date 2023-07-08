@@ -2,7 +2,13 @@ class GroupsController < ApplicationController
   # before_action :require_login
   def index
     # @groups = Group.where(author_id: current_user)
-    @groups = Group.all.order(created_at: :desc).includes(:entities)
+    # @groups = Group.all.order(created_at: :desc).includes(:entities)
+    if user_signed_in?
+      @groups = Group.all.order(created_at: :desc).includes(:entities).where(author: current_user)
+    else
+      @page_title = 'Home'
+      redirect_to home_path
+    end
   end
 
   def new
