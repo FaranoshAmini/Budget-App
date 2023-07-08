@@ -90,11 +90,17 @@ header#page-header,
   margin: auto;
   background-color: var(--main-color);
   color: white;
+  padding: 0px 4px;
 }
 
 header#page-header img {
   width: 35px;
 }
+
+h1 {
+  margin: auto;
+}
+
 
 .signin-header,
 .signout-header {
