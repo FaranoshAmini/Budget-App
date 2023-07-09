@@ -2,23 +2,21 @@ class GroupsController < ApplicationController
   # before_action :require_login
   def index
     # @groups = Group.where(author_id: current_user)
-    @groups = Group.all.order(created_at: :desc).includes(:entities)
+    # @groups = Group.all.order(created_at: :desc).includes(:entities)
+    if user_signed_in?
+      @groups = Group.all.order(created_at: :desc).includes(:entities).where(author: current_user)
+    else
+      @page_title = 'Home'
+      redirect_to home_path
+    end
   end
 
   def new
     @group = Group.new
   end
 
-  # def create
-  #   @new_group = Group.new(group_params)
-  #   return unless @new_group.save
-
-  #   flash[:success] = 'Category created successfully.'
-  #   redirect_to groups_path
-  # end
-
   def create
-    @group = Group.new(author: current_user, name: group_params[:name], icon: group_params[:icon])
+    @group = current_user.groups.build(group_params)
 
     if @group.save
       flash[:notice] = 'Category created successfully'
@@ -41,6 +39,6 @@ class GroupsController < ApplicationController
   private
 
   def group_params
-    params.require(:group).permit(:name, :icon, :author_id)
+    params.require(:group).permit(:name, :icon)
   end
 end
