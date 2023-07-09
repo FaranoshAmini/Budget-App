@@ -13,7 +13,7 @@ class EntitiesController < ApplicationController
 
   def create
     entity = Entity.new(name: entity_params[:name], author_id: current_user.id, amount: entity_params[:amount])
-  
+
     if entity.save
       groups = Group.find(params[:group_id])
       GroupEntity.create(entity_id: entity.id, group_id: groups.id)
@@ -26,21 +26,21 @@ class EntitiesController < ApplicationController
   end
 
   # def create
-    # @group = Group.find(params[:group_id])
-    # @entity = @group.entities.new(name: entity_params[:name],
-    #   amount: entity_params[:amount], author_id: current_user.id)
-    # entity = Entity.create(name: entity_params[:name], author_id: current_user.id, amount: entity_params[:amount])
-    # return unless entity.save
+  # @group = Group.find(params[:group_id])
+  # @entity = @group.entities.new(name: entity_params[:name],
+  #   amount: entity_params[:amount], author_id: current_user.id)
+  # entity = Entity.create(name: entity_params[:name], author_id: current_user.id, amount: entity_params[:amount])
+  # return unless entity.save
 
-    # GroupEntity.create(entity_id: entity.id, group_id: params[:group])
-    # flash[:notice] = 'Transaction created successfully'
-    # redirect_to group_entities_path
-    # if @entity.save
-    #   flash[:notice] = 'Transaction is completed'
-    #   redirect_to group_entities_path(@group)
-    # else
-    #   flash[:notice] = 'Invalid Transaction!'
-    # end
+  # GroupEntity.create(entity_id: entity.id, group_id: params[:group])
+  # flash[:notice] = 'Transaction created successfully'
+  # redirect_to group_entities_path
+  # if @entity.save
+  #   flash[:notice] = 'Transaction is completed'
+  #   redirect_to group_entities_path(@group)
+  # else
+  #   flash[:notice] = 'Invalid Transaction!'
+  # end
   # end
 
   def destroy
