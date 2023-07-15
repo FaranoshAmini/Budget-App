@@ -20,12 +20,12 @@
    <span><%= group.name %></span>
    <span class="date-stamp"><%= group.date %></span>
    </div>
-   <div class="column last-col">
+   <div class="column last-col"></a>
    <span class="sec-text"><%= group.total_amount %></span>
-   <%# <span><%= button_to image_tag(), group_path(group.id), method: :delete, class: "del-group-btn btn-icon"%>
+   <span><%= button_to "Delete", group_path(group), method: :delete, class: "del-group-btn btn-icon" %></span>
    </div>
  </div>
- </a>
+ 
  <% end %>
  <% else %>
         <div class="actions">
