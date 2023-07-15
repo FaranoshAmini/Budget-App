@@ -87,7 +87,7 @@ header#page-header,
   height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   margin: auto;
   background-color: var(--main-color);
   color: white;
@@ -123,6 +123,20 @@ header.title h1 {
   background: none;
   border: none;
   cursor: pointer;
+}
+
+div#sign-in.action  {
+ text-align: center;
+ margin-top: 10px;
+ padding: 10px 100px;
+ width: 50px;
+}
+
+input,button {
+  background-color: #3778c2;
+  color: white;
+  font-size: 20px;
+  border: none;
 }
 
 .categories-signout {
@@ -167,6 +181,12 @@ div.card .column {
   justify-content: space-between;
   gap: 15px;
 }
+
+input#user_name,input#user_email,input#user_password,input#group_name,input#group_icon.last-input, input#entity_name, input#entity_amount {
+ background-color: white;
+ border: 1px solid black;
+ color: black;
+} 
 
 div.card .img-plchldr {
   width: 25%;
@@ -249,6 +269,12 @@ select#entity_group_id {
   width: 96%;
   margin: 7px;
   padding: 10px;
+}
+button.del-group-btn.btn-icon {
+  color: red;
+  border-radius: 10px;
+  width: 50px;
+  background-color: white;
 }
 
 @media only screen and (min-width: 768px) {
