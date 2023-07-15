@@ -125,14 +125,15 @@ header.title h1 {
   cursor: pointer;
 }
 
-div#sign-in.action  {
- text-align: center;
- margin-top: 10px;
- padding: 10px 100px;
- width: 50px;
+div#sign-in.action {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px 100px;
+  width: 50px;
 }
 
-input,button {
+input,
+button {
   background-color: #3778c2;
   color: white;
   font-size: 20px;
@@ -182,11 +183,17 @@ div.card .column {
   gap: 15px;
 }
 
-input#user_name,input#user_email,input#user_password,input#group_name,input#group_icon.last-input, input#entity_name, input#entity_amount {
- background-color: white;
- border: 1px solid black;
- color: black;
-} 
+input#user_name,
+input#user_email,
+input#user_password,
+input#group_name,
+input#group_icon.last-input,
+input#entity_name,
+input#entity_amount {
+  background-color: white;
+  border: 1px solid black;
+  color: black;
+}
 
 div.card .img-plchldr {
   width: 25%;
@@ -270,6 +277,7 @@ select#entity_group_id {
   margin: 7px;
   padding: 10px;
 }
+
 button.del-group-btn.btn-icon {
   color: red;
   border-radius: 10px;
