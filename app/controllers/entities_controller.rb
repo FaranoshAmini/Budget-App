@@ -2,7 +2,6 @@ class EntitiesController < ApplicationController
   def index
     @group = Group.find(params[:group_id])
     @entities = @group.entities.order(created_at: :desc)
-    # @group_entities = Entity.where(group: @group)
   end
 
   def new
@@ -24,24 +23,6 @@ class EntitiesController < ApplicationController
       render :new
     end
   end
-
-  # def create
-  # @group = Group.find(params[:group_id])
-  # @entity = @group.entities.new(name: entity_params[:name],
-  #   amount: entity_params[:amount], author_id: current_user.id)
-  # entity = Entity.create(name: entity_params[:name], author_id: current_user.id, amount: entity_params[:amount])
-  # return unless entity.save
-
-  # GroupEntity.create(entity_id: entity.id, group_id: params[:group])
-  # flash[:notice] = 'Transaction created successfully'
-  # redirect_to group_entities_path
-  # if @entity.save
-  #   flash[:notice] = 'Transaction is completed'
-  #   redirect_to group_entities_path(@group)
-  # else
-  #   flash[:notice] = 'Invalid Transaction!'
-  # end
-  # end
 
   def destroy
     @transaction = Entity.find(params[:id])
