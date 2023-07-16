@@ -1,0 +1,24 @@
+<header class="page-header">
+<%= link_to home_pages_path do %><%= image_tag "left-arrow.png", class: "nav-icon" %> <% end %>
+<h1>Transactions</h1>
+</header>
+<section>
+<div class="top-card">
+<span class="primary-text">Total amount</span>
+<span class="sec-text"><%= @group.total_amount %></span>
+</div>
+<div class="cards-container transactions-container">
+<% @entities.each do |entity| %>
+<div class="card">
+<div class="column">
+<span class="primary-text"><%= entity.name %></span>
+<span class="date-stamp"><%= entity.date%></span>
+</div>
+<div class="column last-col">
+<span class="sec-text"><%= entity.amount%></span>
+</div>
+</div>
+<% end %>
+<%= link_to "ADD TRANSACTION", new_group_entity_path(@group), class: "btn-add" %>
+ </div>
+</section>

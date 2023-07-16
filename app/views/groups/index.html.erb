@@ -1,0 +1,35 @@
+<header class="page-header">
+<%= link_to home_pages_path do %><%= image_tag "left-arrow.png", class: "nav-icon" %> <% end %>
+<h1>Categories</h1>
+<%# <span><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+</svg>
+</span> %>
+<%= button_to "Sign out", destroy_user_session_path , method: :delete %>
+</header>
+<section>
+ <div class="cards-container">
+ <% if @groups.present? %>
+   <% @groups.each do |group| %>
+   <a class="card-link-wrapper" href="<%= group_entities_path(group) %>">
+   <div class="card">
+   <div class="img-plchldr column"><img src="<%= group.icon %>"></div>
+   <div class="column">
+   <span><%= group.name %></span>
+   <span class="date-stamp"><%= group.date %></span>
+   </div>
+   <div class="column last-col">
+   <span class="sec-text"><%= group.total_amount %></span>
+   <%# <span><%= button_to image_tag(), group_path(group.id), method: :delete, class: "del-group-btn btn-icon"%>
+   </div>
+ </div>
+ </a>
+ <% end %>
+ <% else %>
+        <div class="actions">
+            You don't have any Group yet! Create one.
+        </div>
+    <% end %>
+ <%= link_to "ADD CATEGORY", new_group_path, class: "btn-add" %>
+ </div>
+</section>
